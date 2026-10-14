@@ -73,7 +73,7 @@ def login(request):
     if user is None:
         return Response({"detail": "Wrong username or password."}, status=401)
 
-    refresh = RefreshToken.for_user(user)          # <- SimpleJWT creates the token
+    refresh = RefreshToken.for_user(user)          # <- SimpleJWT creates the token #impppppppppppppppppppppp
     return Response({
         "access": str(refresh.access_token),       # the short-lived token
         "refresh": str(refresh),                   # the long-lived token

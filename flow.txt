@@ -1,0 +1,13 @@
+                 SimpleJWT                          PyJWT
+              ┌─────────────────┐              ┌─────────────────┐
+ create token │ RefreshToken    │              │ jwt.encode(     │
+              │   .for_user()   │              │  payload,       │
+              │                 │              │  secret, HS256) │
+              ├─────────────────┤              ├─────────────────┤
+ check token  │ JWTAuthentication              │ @jwt_required   │
+              │ (automatic,     │              │ + decode_token  │
+              │  from settings) │              │ (you call it)   │
+              ├─────────────────┤              ├─────────────────┤
+ you write    │ ~3 views        │              │ ~3 views        │
+              │                 │              │ + 3 helpers     │
+              └─────────────────┘              └─────────────────┘
